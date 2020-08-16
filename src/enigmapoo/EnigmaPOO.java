@@ -7,7 +7,7 @@ public class EnigmaPOO {
 
     public static void main(String[] args) {
         
-        SistemaEngrenagens maquina = new SistemaEngrenagens();
+    SistemaEngrenagens maquina = new SistemaEngrenagens();
 	String texto = Reader.LerTexto("CAMBIO");
 	texto = Conversor.limpaTexto(texto);
         

@@ -20,7 +20,7 @@ public abstract class Reader {
         nomeArquivo = scan.next();
         
         try {
-            String caminho = new File("src/rotores/"+nomeArquivo).getCanonicalPath();
+            String caminho = new File("rotores/"+nomeArquivo).getCanonicalPath();
             arquivoRotor = new BufferedReader(new FileReader(caminho));
             linhaLida = arquivoRotor.readLine();
             Scanner leitor = new Scanner(linhaLida);
