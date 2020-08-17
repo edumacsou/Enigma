@@ -1,26 +1,26 @@
-package enigmapoo.componentes;
+package enigmaoop.movelparts;
 
-public class PermutadorBilateral extends PermutadorUnilateral {
-	// Construtores //
-	public PermutadorBilateral () {
+public class BilateralSwitcher extends UnilateralSwitcher {
+	// Constructors //
+	public BilateralSwitcher () {
 		super();
 	}
 
-	public PermutadorBilateral (int[] sequencia) {
-		super(sequencia);
+	public BilateralSwitcher (int[] sequence) {
+		super(sequence);
 	}
 
-	// Metodos //
-	public int PermutaRetorno (int posRetorno) {
-		if(posRetorno < 0) {
-			posRetorno += 26;
+	// Methods //
+	public int oppositeSwitch (int return_position) {
+		if(return_position < 0) {
+			return_position += 26;
 		}
-		int posEntrada = 0;
+		int input_position = 0;
 		for(int i=0; i<26; i++) {
-			if (sequencia[i] == posRetorno) {
-				posEntrada = i;
+			if (sequence[i] == return_position) {
+				input_position = i;
 			}
 		}
-		return posEntrada;
+		return input_position;
 	}
 }

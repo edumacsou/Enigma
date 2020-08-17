@@ -4,55 +4,55 @@ import java.lang.StringBuilder;
 
 public abstract class Conversor {
 
-	public static int LetraParaInt(char letra) {
-		return (int)letra-65;
+	public static int charToInt (char character) {
+		return (int)character-65;
 	}
 
-	public static char IntParaLetra(int numero) {
-		return (char)(numero+65);
+	public static char intToChar (int number) {
+		return (char)(number+65);
 	}
 
-	public static String IntParaString(int numero) {
-		return ""+(char)(numero+65);
+	public static String intToString(int number) {
+		return ""+(char)(number+65);
 	}
 
-	public static String limpaTexto (String texto) {
-		StringBuilder textoLimpo = new StringBuilder();
-		texto = texto.toUpperCase();
-		for(int i=0; i<texto.length(); i++) {
-			if (texto.charAt(i) < 'A' || texto.charAt(i) > 'Z') {
-				textoLimpo.append(limpaChar(texto.charAt(i)));
+	public static String clearText (String text) {
+		StringBuilder text_clear = new StringBuilder();
+		text = text.toUpperCase();
+		for(int i=0; i<text.length(); i++) {
+			if (text.charAt(i) < 'A' || text.charAt(i) > 'Z') {
+				text_clear.append(clearChar(text.charAt(i)));
 			}
 			else {
-				textoLimpo.append(texto.charAt(i));
+				text_clear.append(text.charAt(i));
 			}
 		}
-		return textoLimpo.toString();
+		return text_clear.toString();
 	}
 
-	private static String limpaChar (char algarismo) {
+	private static String clearChar (char character) {
 
-		int numAlgarismo = LetraParaInt(algarismo);
+		int character_num = LetraParaInt(character);
 		
-		if (numAlgarismo>=192 && numAlgarismo<=198) {
+		if (character_num>=192 && character_num<=198) {
             return "A";
         }
-        else if (numAlgarismo>=200 && numAlgarismo<=203) {
+        else if (character_num>=200 && character_num<=203) {
             return "E";
         }
-        else if (numAlgarismo>=204 && numAlgarismo<=207) {
+        else if (character_num>=204 && character_num<=207) {
             return "I";
 		}
-        else if (numAlgarismo>=210 && numAlgarismo<=214) {
+        else if (character_num>=210 && character_num<=214) {
             return "O";
         }
-        else if (numAlgarismo>=217 && numAlgarismo<=220) {
+        else if (character_num>=217 && character_num<=220) {
             return "U";
         }
-        else if (numAlgarismo==199) {
+        else if (character_num==199) {
             return "C";
         }
-        else if (numAlgarismo==209) {
+        else if (character_num==209) {
             return "N";
         }
 		else {

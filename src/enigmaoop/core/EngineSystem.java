@@ -1,48 +1,48 @@
-package enigmapoo.perifericos;
+package enigmaoop.core;
 
-import enigmapoo.componentes.*;
-import enigmapoo.utilitarios.*;
+import enigmaoop.movel_discs.*;
+import enigmaoop.utilities.*;
 
-public class SistemaEngrenagens {
-	PermutadorBilateral[] rotores = new PermutadorBilateral[3];
-	PermutadorUnilateral espelho;
-	int[] posicaoRotor = new int[3];
+public class EngineSystem {
+	BilateralSwitcher[] rotors = new BilateralSwitcher[3];
+	UnilateralSwitcher mirror;
+	int[] rotor_position = new int[3];
 
-	public SistemaEngrenagens() {	
+	public EngineSystem() {	
 		for(int i=0; i<3; i++) {
-			int[] sequencia = Reader.LerRotor(i);
-			rotores[i] = new PermutadorBilateral(sequencia);
-			posicaoRotor[i] = Reader.LerPosicao(i);
+			int[] sequence = Reader.readRotor(i);
+			rotors[i] = new BilateralSwitcher(sequence);
+			rotor_position[i] = Reader.readPosition(i);
 		}
-		espelho = new PermutadorUnilateral();
+		mirror = new UnilateralSwitcher();
 	}
 
-	public String Codifica (char letra) {
-		int numLetra = Conversor.LetraParaInt(letra);
-		numLetra = rotores[0].PermutaSimples(numLetra+posicaoRotor[0]);
-		numLetra = rotores[1].PermutaSimples(numLetra-posicaoRotor[0]+posicaoRotor[1]);
-		numLetra = rotores[2].PermutaSimples(numLetra-posicaoRotor[1]+posicaoRotor[2]);
-		numLetra = espelho.PermutaSimples(numLetra-posicaoRotor[2]);
-		numLetra = rotores[2].PermutaRetorno(numLetra+posicaoRotor[2]);
-		numLetra = rotores[1].PermutaRetorno(numLetra-posicaoRotor[2]+posicaoRotor[1]);
-		numLetra = rotores[0].PermutaRetorno(numLetra-posicaoRotor[1]+posicaoRotor[0]);
-		AtualizaPosRotores();
-		return Conversor.IntParaString(numLetra);
+	public String encrypt (char character) {
+		int character_num = Conversor.charToInt(character);
+		character_num = rotors[0].simpleSwitch(character_num+rotor_position[0]);
+		character_num = rotors[1].simpleSwitch(character_num-rotor_position[0]+rotor_position[1]);
+		character_num = rotors[2].simpleSwitch(character_num-rotor_position[1]+rotor_position[2]);
+		character_num = mirror.simpleSwitch(character_num-rotor_position[2]);
+		character_num = rotors[2].oppositeSwitch(character_num+rotor_position[2]);
+		character_num = rotors[1].oppositeSwitch(character_num-rotor_position[2]+rotor_position[1]);
+		character_num = rotors[0].oppositeSwitch(character_num-rotor_position[1]+rotor_position[0]);
+		rotorPosUpdate();
+		return Conversor.IntToString(character_num);
 	}
 
-	private void AtualizaPosRotores() {
-		posicaoRotor[2]++;
-		if (posicaoRotor[2]>25)
+	private void rotorPosUpdate() {
+		rotor_position[2]++;
+		if (rotor_position[2]>25)
 		{
-			posicaoRotor[2]-=26;
-			posicaoRotor[1]++;
-			if(posicaoRotor[1]>25)
+			rotor_position[2]-=26;
+			rotor_position[1]++;
+			if(rotor_position[1]>25)
 			{
-				posicaoRotor[1]-=26;
-				posicaoRotor[0]++;
-				if(posicaoRotor[0]>25)
+				rotor_position[1]-=26;
+				rotor_position[0]++;
+				if(rotor_position[0]>25)
 				{
-					posicaoRotor[0]-=26;
+					rotor_position[0]-=26;
 				}
 			}
 		}
