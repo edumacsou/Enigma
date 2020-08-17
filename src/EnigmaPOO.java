@@ -1,5 +1,3 @@
-package enigmapoo;
-
 import enigmapoo.utilitarios.*;
 import enigmapoo.perifericos.SistemaEngrenagens;
 
