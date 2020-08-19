@@ -1,8 +1,8 @@
-package enigmaoop.utilities;
+package src.enigmaoop.utilities;
 
 import java.lang.StringBuilder;
 
-public abstract class Conversor {
+public abstract class Converter {
 
 	public static int charToInt (char character) {
 		return (int)character-65;
@@ -32,7 +32,7 @@ public abstract class Conversor {
 
 	private static String clearChar (char character) {
 
-		int character_num = LetraParaInt(character);
+		int character_num = charToInt(character);
 		
 		if (character_num>=192 && character_num<=198) {
             return "A";

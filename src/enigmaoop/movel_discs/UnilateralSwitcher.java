@@ -1,4 +1,4 @@
-package enigmaoop.movel_discs;
+package src.enigmaoop.movel_discs;
 
 public class UnilateralSwitcher {
 	// Attributes //
@@ -18,7 +18,11 @@ public class UnilateralSwitcher {
 		if(input_position < 0) {
 			input_position += 26;
 		}
-		return sequence[input_position%26];
+		int output = sequence[input_position%26];
+		System.out.println(input_position + " pass to " + output);
+		return output;
+
+		// return sequence[input_position%26];
 	}
 
 	public void setSequence(int[] sequence) {

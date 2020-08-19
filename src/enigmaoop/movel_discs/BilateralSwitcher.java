@@ -1,4 +1,4 @@
-package enigmaoop.movelparts;
+package src.enigmaoop.movel_discs;
 
 public class BilateralSwitcher extends UnilateralSwitcher {
 	// Constructors //
@@ -21,6 +21,7 @@ public class BilateralSwitcher extends UnilateralSwitcher {
 				input_position = i;
 			}
 		}
+		System.out.println(return_position + " pass to " + input_position);
 		return input_position;
 	}
 }

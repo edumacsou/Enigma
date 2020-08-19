@@ -1,4 +1,4 @@
-package enigmaoop.utilities;
+package src.enigmaoop.utilities;
 
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -20,7 +20,7 @@ public abstract class Reader {
         file_name = scan.next();
         
         try {
-            String path = new File("rotors/"+file_name).getCanonicalPath();
+            String path = new File("src/rotors/"+file_name).getCanonicalPath();
             rotor_file = new BufferedReader(new FileReader(path));
             read_line = rotor_file.readLine();
             Scanner reader = new Scanner(read_line);
@@ -47,10 +47,10 @@ public abstract class Reader {
 
     public static int readPosition(int n) {
         String character;
-        System.out.printf("What is the character of the rotor's initial position #%d?\n", n+1);
+        System.out.printf("What is the character of the #%d rotor's initial position?\n", n+1);
         character = scan.next();
         character.toUpperCase();
-        return Conversor.characterParaInt(character.charAt(0));
+        return Converter.charToInt(character.charAt(0));
     }
 
     public static String readText(String keyWord) {

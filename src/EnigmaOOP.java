@@ -1,5 +1,7 @@
-import enigmaoop.utilities.*;
-import enigmaoop.core.EngineSystem;
+package src;
+
+import src.enigmaoop.utilities.*;
+import src.enigmaoop.core.EngineSystem;
 
 public class EnigmaOOP {
 
@@ -7,7 +9,7 @@ public class EnigmaOOP {
         
     EngineSystem machine = new EngineSystem();
 	String text = Reader.readText("CAMBIO");
-	text = Conversor.clearText(text);
+	text = Converter.clearText(text);
         
 	String encrypted = "";
 	for(int i=0; i<text.length(); i++) {
