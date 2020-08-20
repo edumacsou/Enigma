@@ -15,13 +15,17 @@ public class BilateralSwitcher extends UnilateralSwitcher {
 		if(return_position < 0) {
 			return_position += 26;
 		}
+
 		int input_position = 0;
+		
 		for(int i=0; i<26; i++) {
-			if (sequence[i] == return_position) {
+			if (this.sequence[i] == return_position) {
 				input_position = i;
 			}
 		}
-		System.out.println(return_position + " pass to " + input_position);
+
+		System.out.println((return_position%26) + " pass to " + (input_position%26));
 		return input_position;
+
 	}
 }

@@ -10,7 +10,7 @@ public class UnilateralSwitcher {
 	}
 
 	public UnilateralSwitcher() {
-		sequence = new int[] {24, 17, 20, 7, 16, 18, 11, 3, 15, 23, 13, 6, 14, 10, 12, 8, 4, 1, 5, 25, 2, 22, 21, 9, 0, 19};
+		this.sequence = new int[] {24, 17, 20, 7, 16, 18, 11, 3, 15, 23, 13, 6, 14, 10, 12, 8, 4, 1, 5, 25, 2, 22, 21, 9, 0, 19};
 	}
 
 	// Methods //
@@ -18,8 +18,8 @@ public class UnilateralSwitcher {
 		if(input_position < 0) {
 			input_position += 26;
 		}
-		int output = sequence[input_position%26];
-		System.out.println(input_position + " pass to " + output);
+		int output = this.sequence[input_position%26];
+		System.out.println((input_position%26) + " pass to " + (output%26));
 		return output;
 
 		// return sequence[input_position%26];
