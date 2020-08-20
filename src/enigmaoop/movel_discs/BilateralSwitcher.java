@@ -1,5 +1,7 @@
 package src.enigmaoop.movel_discs;
 
+import src.enigmaoop.utilities.Converter;
+
 public class BilateralSwitcher extends UnilateralSwitcher {
 	// Constructors //
 	public BilateralSwitcher () {
@@ -12,9 +14,7 @@ public class BilateralSwitcher extends UnilateralSwitcher {
 
 	// Methods //
 	public int oppositeSwitch (int return_position) {
-		if(return_position < 0) {
-			return_position += 26;
-		}
+		return_position = Converter.normalize(return_position + this.rotate_position);
 
 		int input_position = 0;
 		
@@ -23,9 +23,8 @@ public class BilateralSwitcher extends UnilateralSwitcher {
 				input_position = i;
 			}
 		}
-
-		System.out.println((return_position%26) + " pass to " + (input_position%26));
+		input_position = Converter.normalize(input_position - this.rotate_position);
+		
 		return input_position;
-
 	}
 }

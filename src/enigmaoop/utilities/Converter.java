@@ -30,14 +30,14 @@ public abstract class Converter {
 		return text_clear.toString();
 	}
 
-	private static int normalize (int character_num) {
+	public static int normalize (int character_num) {
 		if (character_num < 0) {
 			character_num += 26;
 		}
 		character_num %= 26;
 
 		if (character_num < 0 || character_num > 25){
-			character_num = this.normalize(character_num);
+			character_num = normalize(character_num);
 		}
 
 		return character_num;
