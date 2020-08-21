@@ -16,6 +16,15 @@ public class EngineSystem {
 		mirror = new UnilateralSwitcher();
 	}
 
+	public EngineSystem(int[] rotorsNumbers, int[] positions) {	
+		for(int i=0; i<3; i++) {
+			int[] sequence = Reader.loadRotor(Integer.toString(rotorsNumbers[i]), 0);
+			rotors[i] = new BilateralSwitcher(sequence);
+			rotors[i].setRotatePosition(positions[i]);
+		}
+		mirror = new UnilateralSwitcher();
+	}
+
 	public String encrypt (char character) {
 		int character_num = Converter.charToInt(character);
 

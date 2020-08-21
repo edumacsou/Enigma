@@ -11,14 +11,21 @@ public abstract class Reader {
     private static Scanner scan = new Scanner(System.in);
 
     public static int[] readRotor(int n) {
-        String file_name, read_line;
+        String file_name;
+
+        System.out.printf("What's the #%d rotor used?\n", n+1);
+        file_name = scan.next();
+
+        return loadRotor(file_name, n);
+        
+    }
+
+    public static int[] loadRotor(String file_name, int n) {
+        String  read_line;
         BufferedReader rotor_file;
         int[] sequence = new int[26];
         int i=0;
 
-        System.out.printf("What's the #%d rotor used?\n", n+1);
-        file_name = scan.next();
-        
         try {
             String path = new File("src/rotors/"+file_name).getCanonicalPath();
             rotor_file = new BufferedReader(new FileReader(path));
