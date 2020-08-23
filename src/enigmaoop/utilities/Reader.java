@@ -41,12 +41,12 @@ public abstract class Reader {
         catch(FileNotFoundException e) {
             System.out.println("Rotor not found!");
             System.out.println("Try again");
-            readRotor(n);
+            return readRotor(n);
         }
         catch(IOException e) {
             System.out.println("Input error");
             System.out.println("Try again");
-            readRotor(n);
+            return readRotor(n);
         }
 
         return sequence;
@@ -56,7 +56,11 @@ public abstract class Reader {
         String character;
         System.out.printf("What is the character of the #%d rotor's initial position?\n", n+1);
         character = scan.next();
-        character.toUpperCase();
+        character = character.toUpperCase();
+        if(character.charAt(0) < 65 || character.charAt(0) > 90) {
+            System.out.println("Invalid character! Try again");
+            return readPosition(n);
+        }
         return Converter.charToInt(character.charAt(0));
     }
 

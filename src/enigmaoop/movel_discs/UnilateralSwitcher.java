@@ -31,6 +31,10 @@ public class UnilateralSwitcher {
 		this.sequence = sequence;
 	}
 
+	public int[] getSequence() {
+		return this.sequence;
+	}
+
 	public void setRotatePosition(int position) {
 		this.rotate_position = Converter.normalize(position);
 	}
