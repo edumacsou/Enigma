@@ -25,7 +25,18 @@ public class EngineSystem {
 		mirror = new UnilateralSwitcher();
 	}
 
-	public String encrypt (char character) {
+	public String encryptText (String originalText) {
+		String text = Converter.clearText(originalText);
+        
+		String encrypted = "";
+		for(int i=0; i<text.length(); i++) {
+			encrypted += this.encryptChar(text.charAt(i));
+		}
+
+		return encrypted;
+	}
+
+	public String encryptChar (char character) {
 		int character_num = Converter.charToInt(character);
 
 		character_num = rotors[0].simpleSwitch(character_num);
@@ -47,5 +58,23 @@ public class EngineSystem {
 				rotors[0].rotate();
 			}
 		}
+	}
+
+	public void show() {
+		for (int i=0; i<rotors.length; i++) {
+			System.out.printf("The rotor %d is in position %d\n", i+1, rotors[i].getRotatePosition());
+			System.out.println("This rotor is:");
+			int[] sequence = rotors[i].getSequence();
+			for (int j=0; j<sequence.length; j++) {
+				System.out.print(sequence[j] + " | ");
+			}
+			System.out.println("");
+		}
+		System.out.println("The mirror rotor is:");
+		int[] sequence = mirror.getSequence();
+		for(int i=0; i<sequence.length; i++) {
+			System.out.print(sequence[i] + " | ");
+		}
+		System.out.println("");
 	}
 }
