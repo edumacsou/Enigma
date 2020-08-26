@@ -16,14 +16,8 @@ public class EnigmaOOP {
         
     EngineSystem machine = new EngineSystem();
 	String text = Reader.readText("CAMBIO");
-	text = Converter.clearText(text);
-        
-	String encrypted = "";
-	for(int i=0; i<text.length(); i++) {
-		encrypted += machine.encrypt(text.charAt(i));
-	}
-	System.out.println(encrypted);
-        
+	
+	System.out.println(machine.encryptText(text));
     }
     
 }
