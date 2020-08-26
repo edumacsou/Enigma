@@ -1,2 +1,4 @@
 *.class
 .vscode/settings.json
+.vscode
+Markdown Reference.md

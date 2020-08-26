@@ -1,3 +1,10 @@
+/*
+ * Created with Java SE 8u261
+ * Under licence MIT
+ * Author : Eduardo Maciel de Souza
+ */
+
+
 package src;
 
 import src.enigmaoop.utilities.*;
