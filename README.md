@@ -1,12 +1,6 @@
-<Style>
-    h2 {
-        display:inline;
-    }
-</Style>
-
 # Object Oriented Enigma
 
-<details><summary><h2> 1. What is this repository?</h2></summary>
+<details><summary><h2 Style="display:inline"> 1. What is this repository?</h2></summary>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp; This repository is a digital version of an electromechanical dispositive, made with the purpose of learning about cipher and developing programing skills.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp; Using the concepts of object-oriented programming, it was possible to transcript the logic of an electromechanical device into a code, where all the parts were represented into a class with attributes and methods. <br/>
@@ -15,14 +9,14 @@
 ---
 </p> </details>
 
-<details><summary><h2> 2. What is the enigma machine?</h2></summary>
+<details><summary><h2 Style="display:inline"> 2. What is the enigma machine?</h2></summary>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp; The Enigma machine is an encryption device developed and used in the early to mid 20th century to protect commercial, diplomatic and military communication.
 
 ---
 </p> </details>
 
-<details><summary><h2> 3. How to run the enigma?</h2></summary>
+<details><summary><h2 Style="display:inline"> 3. How to run the enigma?</h2></summary>
 <p>
 1. To use this application you need Oracle JDK 8u261 or above (you can download it [here](https://www.oracle.com/java/technologies/javase-downloads.html))
 
@@ -53,7 +47,7 @@
 ---
 </p> </details>
 
-<details><summary><h2> 4. How to use it?</h2></summary>
+<details><summary><h2 Style="display:inline"> 4. How to use it?</h2></summary>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp; After running EnigmaOOP, the terminal will ask for a number relative to a rotor file. This number must be between 1 and 5. After this, a letter will set the initial position of the rotor. This process will be repeated for 2 more times until all the 3 rotors are set. 
 Save these settings, you'll need them later to decrypt your message.<br>
@@ -65,7 +59,7 @@ Save these settings, you'll need them later to decrypt your message.<br>
 ---
 </p> </details>
 
-<details><summary><h2> 5. Concepts used</h2></summary>
+<details><summary><h2 Style="display:inline"> 5. Concepts used</h2></summary>
 <p>
 - Object Oriented Programing
   - Abstraction
