@@ -9,7 +9,7 @@ The methods represent the functions of each part, and are encapsulated to be see
 ---
 </details>
 
-<details><summary><b> 2. What is the enigma machine?</b></summary></br>
+<details><summary><b> 2. What is the Enigma machine?</b></summary></br>
 
 The Enigma machine is an encryption device developed and used in the early to mid 20th century to protect commercial, diplomatic and military communication.
 
@@ -18,7 +18,7 @@ The Enigma machine is an encryption device developed and used in the early to mi
 
 <details><summary><b> 3. How to run the enigma?</b></summary></br>
 
-1. To use this application you need Oracle JDK 8u261 or above (you can download it [here](https://www.oracle.com/java/technologies/javase-downloads.html))
+1. To use this application you will need Oracle JDK 8u261 or above (you can download it [here](https://www.oracle.com/java/technologies/javase-downloads.html))
 
 2. Clone this repository to your computer and unzip it. The files will be in a path like this:
     ````
@@ -52,7 +52,7 @@ The Enigma machine is an encryption device developed and used in the early to mi
 After running EnigmaOOP, the terminal will ask for a number relative to a rotor file. This number must be between 1 and 5. After this, a letter will set the initial position of the rotor. This process will be repeated for 2 more times until all the 3 rotors are set. 
 Save these settings, you'll need them later to decrypt your message.<br>
 
-Write your message, assuming that all the special characters, spaces, and numbers will be deleted and all the letters will be uppercased. You can use multiple lines. The program will stop receiving words when the word "CAMBIO" be written.<br>
+Write your message, assuming that all special characters, spaces, and numbers will be deleted and every letter will be uppercased. You can use multiple lines. The program will stop receiving words when the word "CAMBIO" is written.<br>
 
 The program will print a code like this: FTWGMOTJIADKNAIHDYEAHVOA on your console. This is your encrypted message. It can be decrypted by setting a new machine with the same initial conditions and the word "CAMBIO" at the end of the message.
 
